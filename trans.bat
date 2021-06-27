@@ -1,1 +1,1 @@
- scp ./server/main.go root@95.111.251.152:~/dev/go/src/github.com/tenenwurcel/tcptunnel-server/main.go
+ scp ./server/main.go root@144.91.68.23:~/dev/go/src/github.com/tenenwurcel/tcptunnel-server/main.go

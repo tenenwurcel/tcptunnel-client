@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	server, err := api.NewServer("tcp", "95.111.251.152:8081")
+	server, err := api.NewServer("tcp", ":8081")
 	if err != nil {
 		panic(err)
 	}

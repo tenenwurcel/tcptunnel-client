@@ -45,7 +45,7 @@ func (l *Listener) Accept() (net.Conn, error) {
 		}
 	}
 
-	host := fmt.Sprintf("%s:%d", "95.111.251.152", port)
+	host := fmt.Sprintf("%s:%d", "144.91.68.23", port)
 	fmt.Println(host)
 	conn, err := net.Dial("tcp", host)
 	if err != nil {

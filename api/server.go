@@ -1,6 +1,11 @@
 package api
 
-import "net"
+import (
+	"fmt"
+	"log"
+	"net"
+	"os"
+)
 
 type Server struct {
 	protocol string
@@ -8,8 +13,15 @@ type Server struct {
 	conn     net.Conn
 }
 
-func NewServer(protocol string, host string) (*Server, error) {
-	conn, err := net.Dial(protocol, host)
+func NewServer(protocol string, port string) (*Server, error) {
+	host := os.Getenv("TCPTUNNELHOST")
+	if host == "" {
+		log.Fatal("no host was provided")
+	}
+
+	fmt.Println(host)
+	connString := fmt.Sprintf("%s%s", host, port)
+	conn, err := net.Dial(protocol, connString)
 	if err != nil {
 		return &Server{}, err
 	}
